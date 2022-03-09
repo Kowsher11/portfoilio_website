@@ -1,0 +1,392 @@
+@import "config";
+
+@import "uitilites";
+
+@import "item_grid";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "dosis", sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+
+// logo
+
+#logo {
+  height: 70px;
+  width: 70px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+#main-nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding: 1rem 1.5rem;
+  }
+
+  a {
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 3px transparent solid;
+    transition: border-color 1s;
+    padding-bottom: 0.5rem;
+
+    &:hover {
+      border-color: $light-color;
+    }
+
+    &.current {
+      border-color: $main-color;
+    }
+  }
+}
+
+// Header HOme
+
+#header {
+  &-home {
+    background: $bg-image no-repeat center right / cover;
+    height: 100vh;
+    color: #fff;
+
+    .header-content {
+      padding-top: 20%;
+      text-align: center;
+
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  &-inner {
+    height: 5.5rem;
+    border-bottom: 3px solid $main-color;
+    background: $bg-image no-repeat 20% 30% / cover;
+  }
+}
+
+// Sections
+
+#home {
+  // Section A: Specials
+  &-a {
+    .specials {
+      margin-top: 3rem;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      .fas {
+        color: $main-color;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+  // Section B: Stats
+  &-b {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      li {
+        line-height: 2;
+
+        &.stats-title {
+          font-size: 1.5rem;
+        }
+
+        &.stats-number {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+
+      div {
+        padding: 3rem 0;
+
+        &:nth-child(even) {
+          background-color: $light-color;
+        }
+
+        &:nth-child(odd) {
+          background-color: $medium-color;
+        }
+      }
+    }
+  }
+  // Section C: Process
+  &-c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      grid-gap: 1.5rem;
+
+      &-step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 28px;
+        text-align: center;
+        background-color: $main-color;
+        color: #fff;
+        border-radius: 50%;
+        height: 15px;
+        line-height: 15px;
+        width: 15px;
+        transition: all 1s;
+        padding: 1rem;
+      }
+
+      &-icon {
+        position: relative;
+        background-color: $dark-color;
+        color: $light-color;
+        border-radius: 50%;
+        height: 70px;
+        line-height: 70px;
+        width: 70px;
+        padding: 2rem;
+        transition: all 1s;
+        text-align: center;
+
+        &:hover {
+          height: 90px;
+          width: 90px;
+          line-height: 90px;
+          background-color: $main-color;
+
+          .process-step {
+            background-color: $dark-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Home Section
+
+#about {
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas:
+        "bioimage bio bio"
+        "aw1 aw2 aw3";
+      grid-gap: 1.2rem;
+    }
+
+    // Grid Area
+    .bio-image {
+      grid-area: bioimage;
+    }
+
+    .bio {
+      grid-area: bio;
+      border-left: 3px solid $main-color;
+      padding: 0.5rem;
+    }
+
+    .award-1 {
+      grid-area: aw1;
+    }
+
+    .award-2 {
+      grid-area: aw2;
+    }
+
+    .award-3 {
+      grid-area: aw3;
+    }
+
+    .award-1 .fas,
+    .award-2 .fas,
+    .award-3 .fas {
+      color: $main-color;
+      margin: 1rem;
+    }
+  }
+
+  // Section B: Progress Bar
+
+  &-b {
+    .progress {
+      overflow: hidden;
+      height: 20px;
+      background-color: $medium-color;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+
+      div {
+        background-color: $main-color;
+        text-align: center;
+        color: #fff;
+        height: 100%;
+      }
+    }
+  }
+  // About Logos
+  &-c {
+    .about-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 2rem;
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+  // Testimonials
+  &-d {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.5rem;
+
+      p {
+        border: 1px solid $medium-color;
+        padding: 0.5rem;
+        border-radius: 5px;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        margin-top: 1rem;
+        align-items: center;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Contact
+
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-template-areas:
+        "name email"
+        "subject phone"
+        "message message";
+      grid-gap: 1.2rem;
+      margin-bottom: 1.2rem;
+
+      // Grid Area
+
+      .name-input {
+        grid-area: name;
+      }
+      .email-input {
+        grid-area: email;
+      }
+      .subject-input {
+        grid-area: subject;
+      }
+      .phone-input {
+        grid-area: phone;
+      }
+
+      .message-input {
+        grid-area: message;
+        height: 100px;
+      }
+
+      .text-input {
+        padding: 0.5rem 1rem;
+      }
+    }
+    button[type="submit"] {
+      width: 50%;
+    }
+  }
+
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-c {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
+
+// Footer
+
+#main-footer {
+  height: 5rem;
+  background-color: $dark-color;
+  color: #fff;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+
+    .social .fab {
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      padding: 0.5rem;
+      background-color: $dark-color;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 1rem;
+
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+  }
+}
+// Import Media Queries
+@import "media";
